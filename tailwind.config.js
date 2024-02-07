@@ -1,9 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["public/**/*.{html,js}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+    content: ["public/**/*.{html,js}"],
+    theme: {
+	fontFamily: {
+	    'nunito': ['nunito', 'sans-serif'],
+	    'MyFont': ['"My Font"', 'serif'] // Ensure fonts with spaces have " " surrounding it.
+	},
+	extend: {
+	},
+    },
+    variants: {
+    },
+    plugins: [],
 }
 
