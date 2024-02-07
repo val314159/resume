@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="//unpkg.com/hyperscript.org@0.9.12"></script>
+    <script src="//unpkg.com/htmx.org@1.9.10"></script>
+    <script src="//unpkg.com/htmx.org@1.9.10/dist/ext/alpine-morph.js"></script>
+    <script defer src="//unpkg.com/alpinejs@3.13.5"></script>
+    <script defer src="//unpkg.com/@alpinejs/morph@3.13.5/dist/cdn.min.js"></script>
+    <style>
+      html {height:100%}
+      body {min-height:100%}
+      .grid {
+	  display: grid;
+	  grid-template: auto 1fr auto / auto 1fr auto;
+	  gap: 0px;
+	  height: 100%;
+      }
+      #header {
+	  xbackground-color: #FA59E9;
+	  grid-row: 1 / 2;
+	  grid-column: 1 / 4;
+
+      }
+      #leftbar {
+	  xbackground-color: #899ACD;
+	  grid-row: 2 / 4;
+	  grid-column: 1 / 2;
+      }
+      #rightbar {
+	  xbackground-color: #5777FB;
+	  grid-row: 2 / 3;
+	  grid-column: 3 / 4;
+      }
+      #center {
+	  xbackground-color: #A8A59A;
+	  grid-row: 2 / 3;
+	  grid-column: 2 / 3;
+      }
+      #footer {
+	  xbackground-color: #558A7D;
+	  grid-row: 3 / 4;
+	  grid-column: 2 / 4;
+      }
+
+      #myVideo {
+	  position: fixed;
+	  right: 0;
+	  bottom: 0;
+	  min-width: 100%;
+	  min-height: 100%;
+      }
+      
+    </style>
+  </head>
+  <body class="grid bg-gray-600">
+    <video autoplay muted loop id="myVideo">	
+      type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    
+    
+    <div id="header">
+      Header
+    </div>
+    <div id="leftbar">
+      Left
+    </div>
+    <div id="rightbar">
+      Right
+    </div>
+    <div id="center">
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+      Center      <br>
+    </div>
+    <div id="footer">
+      Footer
+    </div>
+      
+<!--
+    <div class="bg-green-100">green</div>
+    <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+    <div x-data="{ count: 0 }">
+      <h2 class="text-bold">Counter Example</h2>
+      <button @click="count++">Increment</button>
+      <span x-text="count"></span>
+    </div>
+    <div id="hello">
+      Hello
+    </div>
+    <a hx-get="frag.html"
+       hx-target="#hello"
+       >Frag</a>
+  </body>-->
+</html>

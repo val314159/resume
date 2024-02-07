@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * {
+          box-sizing: border-box;
+      }
+      html {
+	  height:100%;
+      }
+      body {
+	  min-height:100%;
+
+          margin: 0;
+          font-family: Arial;
+          font-size: 17px;
+      }
+
+      .grid {
+	  display: grid;
+	  grid-template: auto 1fr auto / auto 1fr auto;
+	  gap: 0px;
+	  height: 100%;
+      }
+      #header {
+	  xbackground-color: #FA59E9;
+	  grid-row: 1 / 2;
+	  grid-column: 1 / 4;
+
+      }
+      #leftbar {
+	  xbackground-color: #899ACD;
+	  grid-row: 2 / 4;
+	  grid-column: 1 / 2;
+      }
+      #rightbar {
+	  xbackground-color: #5777FB;
+	  grid-row: 2 / 3;
+	  grid-column: 3 / 4;
+      }
+      #center {
+	  xbackground-color: #A8A59A;
+	  grid-row: 2 / 3;
+	  grid-column: 2 / 3;
+      }
+      #footer {
+	  xbackground-color: #558A7D;
+	  grid-row: 3 / 4;
+	  grid-column: 2 / 4;
+      }
+      #myVideo {
+	  z-index: -1;
+          position: fixed;
+          right: 0;
+          bottom: 0;
+          min-width: 100%;
+          min-height: 100%;
+      }
+      .bottomcontent {
+          position: fixed;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          color: #f1f1f1;
+          width: 100%;
+          padding: 20px;
+      }
+      #myBtn {
+          width: 200px;
+          font-size: 18px;
+          padding: 10px;
+          border: none;
+          background: #000;
+          color: #fff;
+          cursor: pointer;
+      }
+      #myBtn:hover {
+          background: #ddd;
+          color: black;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="
+	       grid
+	       bg-gray-600
+	       text-slate-100
+	       ">
+
+    <video autoplay muted loop id="myVideo">
+      <source src="video-bg-240p.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+
+    <div id="header" class="
+			    border-2
+			    border-green-300
+			    xtext-slate-100
+			    flex
+			    w-full
+			    ">
+      <div id="header1" class="
+			       border-2
+			       border-red-300
+			       w-1/3
+			       ">
+	Header Left
+      </div>
+      <div id="header2" class="
+			       border-2
+			       border-red-300
+			       w-1/3
+			       flex
+			       justify-center
+			       ">
+	<div class="">
+	  Header Mid1
+	</div>
+	<div class="">
+	  Header Mid2
+	</div>
+      </div>
+      <div id="header3" class="
+			       border-2
+			       border-red-300
+			       w-1/3
+			       align-right
+			       float-right
+			       ">
+	<div class="float-right">
+	  Header Rightx
+	</div>
+	<div class="float-right">
+	  Header Righty
+	</div>
+	<div>
+	  Header Rightz
+	</div>
+      </div>
+    </div>
+    <div id="leftbar" class="
+			     xtext-slate-100
+			     ">
+      Left
+    </div>
+    <div id="rightbar" class="
+			      xtext-slate-100
+			      ">
+      Right
+    </div>
+    <div id="center" class="
+			    xtext-slate-100
+			    ">
+      <script>
+	const QS=s=>document.querySelector(s)
+	function processForm(){
+	    event.preventDefault()
+	    console.log("xyz")
+	    const elt = QS("#search")
+	    elt.select()
+	    setTimeout(()=>alert(`Now we search for ${elt.value} somehow!`))
+	}
+      </script>
+      <form onsubmit="processForm()">
+	<center>
+	  <h1>Heading One</h1>
+	  <h2>Heading Two</h2>
+	  Center      <br>
+	  Center      <br>
+
+	  <span class="font-mono">Search:</span>
+	  <input type="search" name="search" id="search"
+		 class="
+			shadow-inner
+			w-3/4
+			rounded-full
+			bg-green-200
+			text-blue-800
+			p-2
+			px-3
+			text-sm
+			">
+	  <br>
+	  Center      <br>
+	  Center      <br>
+	  Center      <br>
+	</center>
+      </form>
+    </div>
+    <div id="footer" class="
+			    xtext-slate-50
+			    text-sm
+			    font-light
+			    ">
+      &copy (C)opyright Joel Ward 2024
+    </div>
+
+    
+    <div class="bottomcontent">
+      <h1>Heading</h1>
+      <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p>
+      <button id="myBtn" onclick="myFunction()">Pause</button>
+    </div>
+
+    <script>
+      var video = document.getElementById("myVideo");
+      var btn = document.getElementById("myBtn");
+
+      function myFunction() {
+          if (video.paused) {
+              video.play();
+              btn.innerHTML = "Pause";
+          } else {
+              video.pause();
+              btn.innerHTML = "Play";
+          }
+      }
+    </script>
+
+  </body>
+</html>
